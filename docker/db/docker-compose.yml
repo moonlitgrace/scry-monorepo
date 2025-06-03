@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mongo:8.0
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - 27017:27017
+    volumes:
+      - db_data:/data/db
+
+volumes:
+  db_data:
