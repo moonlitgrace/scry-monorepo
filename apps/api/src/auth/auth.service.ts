@@ -1,13 +1,19 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
+import { UserDocument } from 'src/users/schema/user.schema';
 import { UsersService } from 'src/users/users.service';
 import { SignInDto } from './dto/sign-in.dto';
+import { AccessToken, AccessTokenPayload } from './interfaces/access-token';
 import { comparePass, hashPass } from './utils';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(
+    private readonly usersService: UsersService,
+    private readonly jwtService: JwtService,
+  ) {}
 
-  async validateUser(email: string, password: string) {
+  async validateUser(email: string, password: string): Promise<UserDocument> {
     const user = await this.usersService.findOneByEmail(email);
     if (!user) {
       throw new BadRequestException('User not found!');
@@ -20,13 +26,23 @@ export class AuthService {
     return user;
   }
 
-  async signIn(data: SignInDto) {
-    const existingUser = await this.usersService.findOneByEmail(data.email);
+  signIn(user: UserDocument): AccessToken {
+    const payload: AccessTokenPayload = { sub: user._id, email: user.email };
+    return { access_token: this.jwtService.sign(payload) };
+  }
+
+  async signUp(user: SignInDto): Promise<AccessToken> {
+    const existingUser = await this.usersService.findOneByEmail(user.email);
     if (existingUser) {
       throw new BadRequestException('Email already exists!');
     }
 
-    const hashedPassword = await hashPass(data.password);
-    return this.usersService.create({ email: data.email, password: hashedPassword });
+    const hashedPassword = await hashPass(user.password);
+    const createdUser = await this.usersService.create({
+      email: user.email,
+      password: hashedPassword,
+    });
+
+    return this.signIn(createdUser);
   }
 }

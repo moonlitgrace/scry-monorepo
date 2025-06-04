@@ -12,7 +12,7 @@ export class UsersService {
     return this.userModel.findOne({ email });
   }
 
-  async create(data: CreateUser) {
-    return this.userModel.create(data);
+  async create(user: CreateUser) {
+    return this.userModel.create(user);
   }
 }

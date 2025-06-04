@@ -6,8 +6,7 @@ export class User {
   @Prop({ unique: true, required: true })
   email!: string;
 
-  // remove password from select queries
-  @Prop({ required: true, select: false })
+  @Prop({ required: true })
   password!: string;
 }
 
