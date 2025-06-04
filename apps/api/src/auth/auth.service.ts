@@ -1,6 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { UserDocument } from 'src/users/schema/user.schema';
 import { UsersService } from 'src/users/users.service';
 import { SignInDto } from './dto/sign-in.dto';
 import { AccessToken, AccessTokenPayload } from './interfaces/access-token';
@@ -13,22 +12,21 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async validateUser(email: string, password: string): Promise<UserDocument> {
+  async validateUser(email: string, password: string): Promise<AccessTokenPayload> {
     const user = await this.usersService.findOneByEmail(email);
-    if (!user) {
-      throw new BadRequestException('User not found!');
-    }
-    const isMatch = await comparePass(password, user.password);
-    if (!isMatch) {
-      throw new BadRequestException('Password does not match!');
-    }
+    if (!user) throw new BadRequestException('User not found!');
 
-    return user;
+    const isMatch = await comparePass(password, user.password);
+    if (!isMatch) throw new BadRequestException('Password does not match!');
+
+    return {
+      sub: user._id,
+      email: user.email,
+    };
   }
 
-  signIn(user: UserDocument): AccessToken {
-    const payload: AccessTokenPayload = { sub: user._id, email: user.email };
-    return { access_token: this.jwtService.sign(payload) };
+  signIn(user: AccessTokenPayload): AccessToken {
+    return { access_token: this.jwtService.sign(user) };
   }
 
   async signUp(user: SignInDto): Promise<AccessToken> {
@@ -43,6 +41,9 @@ export class AuthService {
       password: hashedPassword,
     });
 
-    return this.signIn(createdUser);
+    return this.signIn({
+      sub: createdUser._id,
+      email: createdUser.email,
+    });
   }
 }
