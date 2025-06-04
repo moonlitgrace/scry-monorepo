@@ -1,9 +1,9 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import bcrypt from 'bcrypt';
 import { UsersService } from 'src/users/users.service';
 import { SignInDto } from './dto/sign-in.dto';
 import { AccessToken, AccessTokenPayload } from './interfaces/access-token';
-import { comparePass, hashPass } from './utils';
 
 @Injectable()
 export class AuthService {
@@ -16,7 +16,7 @@ export class AuthService {
     const user = await this.usersService.findOneByEmail(email);
     if (!user) throw new BadRequestException('User not found!');
 
-    const isMatch = await comparePass(password, user.password);
+    const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) throw new BadRequestException('Password does not match!');
 
     return {
@@ -35,7 +35,7 @@ export class AuthService {
       throw new BadRequestException('Email already exists!');
     }
 
-    const hashedPassword = await hashPass(user.password);
+    const hashedPassword = await bcrypt.hash(user.password, 10);
     const createdUser = await this.usersService.create({
       email: user.email,
       password: hashedPassword,
