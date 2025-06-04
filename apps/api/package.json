@@ -6,6 +6,7 @@
     "@nestjs/core": "catalog:",
     "@nestjs/mongoose": "^11.0.3",
     "@nestjs/platform-express": "catalog:",
+    "bcrypt": "^6.0.0",
     "mongoose": "^8.15.1",
     "reflect-metadata": "catalog:",
     "rxjs": "catalog:"
@@ -20,6 +21,7 @@
     "@repo/typescript-config": "workspace:*",
     "@swc/cli": "catalog:",
     "@swc/core": "catalog:",
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "catalog:",
     "@types/jest": "catalog:",
     "@types/node": "catalog:",
