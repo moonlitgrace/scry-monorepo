@@ -6,9 +6,20 @@ export class User {
   @Prop({ unique: true, required: true })
   email!: string;
 
-  @Prop({ required: true })
+  // remove password from select queries
+  @Prop({ required: true, select: false })
   password!: string;
 }
 
 export type UserDocument = HydratedDocument<User>;
-export const UserSchema = SchemaFactory.createForClass(User);
+const UserSchema = SchemaFactory.createForClass(User);
+
+// exlucde password from response
+UserSchema.set('toJSON', {
+  transform(_, ret) {
+    delete ret.password;
+    return ret;
+  },
+});
+
+export { UserSchema };
