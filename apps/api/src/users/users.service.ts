@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { CreateUser } from './interfaces/create-user.interface';
 import { User } from './schema/user.schema';
 
 @Injectable()
@@ -12,7 +11,7 @@ export class UsersService {
     return this.userModel.findOne({ email });
   }
 
-  async create(user: CreateUser) {
-    return this.userModel.create(user);
+  async create(email: string, password: string) {
+    return this.userModel.create({ email, password });
   }
 }
