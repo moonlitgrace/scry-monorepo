@@ -232,8 +232,8 @@ catalogs:
       specifier: ^3.3.0
       version: 3.3.0
     tailwindcss:
-      specifier: ^4.1.6
-      version: 4.1.7
+      specifier: ^4.1.11
+      version: 4.1.11
     ts-jest:
       specifier: ^29.2.5
       version: 29.3.4
@@ -471,7 +471,7 @@ importers:
         version: 0.510.0(react@19.1.0)
       tailwindcss:
         specifier: 'catalog:'
-        version: 4.1.7
+        version: 4.1.11
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
@@ -541,7 +541,7 @@ importers:
         version: 0.510.0(react@19.1.0)
       tailwindcss:
         specifier: 'catalog:'
-        version: 4.1.7
+        version: 4.1.11
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
@@ -653,7 +653,7 @@ importers:
         version: 8.5.3
       tailwindcss:
         specifier: 'catalog:'
-        version: 4.1.7
+        version: 4.1.11
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
@@ -6780,6 +6780,9 @@ packages:
 
   tailwind-merge@3.3.0:
     resolution: {integrity: sha512-fyW/pEfcQSiigd5SNn0nApUOxx0zB/dm6UDU/rEwc2c3sX2smWUNbapHv+QRqLGVp9GWX3THIa7MUGPo+YkDzQ==}
+
+  tailwindcss@4.1.11:
+    resolution: {integrity: sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==}
 
   tailwindcss@4.1.7:
     resolution: {integrity: sha512-kr1o/ErIdNhTz8uzAYL7TpaUuzKIE6QPQ4qmSdxnoX/lo+5wmUHQA6h3L5yIqEImSRnAAURDirLu/BgiXGPAhg==}
@@ -14114,6 +14117,8 @@ snapshots:
       - typescript
 
   tailwind-merge@3.3.0: {}
+
+  tailwindcss@4.1.11: {}
 
   tailwindcss@4.1.7: {}
 
