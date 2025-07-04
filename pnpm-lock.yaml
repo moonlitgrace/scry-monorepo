@@ -46,8 +46,8 @@ catalogs:
       specifier: ^11.0.1
       version: 11.1.1
     '@next/eslint-plugin-next':
-      specifier: ^15.3.2
-      version: 15.3.2
+      specifier: ^15.3.4
+      version: 15.3.4
     '@radix-ui/react-accordion':
       specifier: ^1.2.10
       version: 1.2.10
@@ -91,8 +91,8 @@ catalogs:
       specifier: ^8.1.0
       version: 8.1.0
     '@swc/cli':
-      specifier: ^0.6.0
-      version: 0.6.0
+      specifier: ^0.7.7
+      version: 0.7.7
     '@swc/core':
       specifier: ^1.10.7
       version: 1.11.24
@@ -232,8 +232,8 @@ catalogs:
       specifier: ^3.3.0
       version: 3.3.0
     tailwindcss:
-      specifier: ^4.1.6
-      version: 4.1.7
+      specifier: ^4.1.11
+      version: 4.1.11
     ts-jest:
       specifier: ^29.2.5
       version: 29.3.4
@@ -341,7 +341,7 @@ importers:
     devDependencies:
       '@nestjs/cli':
         specifier: 'catalog:'
-        version: 11.0.7(@swc/cli@0.6.0(@swc/core@1.11.24)(chokidar@4.0.3))(@swc/core@1.11.24)(@types/node@22.15.19)
+        version: 11.0.7(@swc/cli@0.7.7(@swc/core@1.11.24)(chokidar@4.0.3))(@swc/core@1.11.24)(@types/node@22.15.19)
       '@nestjs/config':
         specifier: 'catalog:'
         version: 4.0.2(@nestjs/common@11.1.1(class-transformer@0.5.1)(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(rxjs@7.8.2)
@@ -362,7 +362,7 @@ importers:
         version: link:../../tools/typescript
       '@swc/cli':
         specifier: 'catalog:'
-        version: 0.6.0(@swc/core@1.11.24)(chokidar@4.0.3)
+        version: 0.7.7(@swc/core@1.11.24)(chokidar@4.0.3)
       '@swc/core':
         specifier: 'catalog:'
         version: 1.11.24
@@ -471,7 +471,7 @@ importers:
         version: 0.510.0(react@19.1.0)
       tailwindcss:
         specifier: 'catalog:'
-        version: 4.1.7
+        version: 4.1.11
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
@@ -541,7 +541,7 @@ importers:
         version: 0.510.0(react@19.1.0)
       tailwindcss:
         specifier: 'catalog:'
-        version: 4.1.7
+        version: 4.1.11
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
@@ -653,7 +653,7 @@ importers:
         version: 8.5.3
       tailwindcss:
         specifier: 'catalog:'
-        version: 4.1.7
+        version: 4.1.11
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
@@ -680,7 +680,7 @@ importers:
         version: 9.27.0
       '@next/eslint-plugin-next':
         specifier: 'catalog:'
-        version: 15.3.2
+        version: 15.3.4
       eslint:
         specifier: 'catalog:'
         version: 9.29.0(jiti@2.4.2)
@@ -2235,8 +2235,8 @@ packages:
   '@next/env@15.3.2':
     resolution: {integrity: sha512-xURk++7P7qR9JG1jJtLzPzf0qEvqCN0A/T3DXf8IPMKo9/6FfjxtEffRJIIew/bIL4T3C2jLLqBor8B/zVlx6g==}
 
-  '@next/eslint-plugin-next@15.3.2':
-    resolution: {integrity: sha512-ijVRTXBgnHT33aWnDtmlG+LJD+5vhc9AKTJPquGG5NKXjpKNjc62woIhFtrAcWdBobt8kqjCoaJ0q6sDQoX7aQ==}
+  '@next/eslint-plugin-next@15.3.4':
+    resolution: {integrity: sha512-lBxYdj7TI8phbJcLSAqDt57nIcobEign5NYIKCiy0hXQhrUbTqLqOaSDi568U6vFg4hJfBdZYsG4iP/uKhCqgg==}
 
   '@next/swc-darwin-arm64@15.3.2':
     resolution: {integrity: sha512-2DR6kY/OGcokbnCsjHpNeQblqCZ85/1j6njYSkzRdpLn5At7OkSdmk7WyAmB9G0k25+VgqVZ/u356OSoQZ3z0g==}
@@ -3082,8 +3082,8 @@ packages:
     resolution: {integrity: sha512-LnhVjMWyMQV9ZmeEy26maJk+8HTIbd59cH4F2MJ439k9DqejRisfFNGAPvRYlKETuh9LrImlS8aKsBgKjMA8WA==}
     engines: {node: '>=14'}
 
-  '@swc/cli@0.6.0':
-    resolution: {integrity: sha512-Q5FsI3Cw0fGMXhmsg7c08i4EmXCrcl+WnAxb6LYOLHw4JFFC3yzmx9LaXZ7QMbA+JZXbigU2TirI7RAfO0Qlnw==}
+  '@swc/cli@0.7.7':
+    resolution: {integrity: sha512-j4yYm9bx3pxWofaJKX1BFwj/3ngUDynN4UIQ2Xd2h0h/7Gt7zkReBTpDN7g5S13mgAYxacaTHTOUsz18097E8w==}
     engines: {node: '>= 16.14.0'}
     hasBin: true
     peerDependencies:
@@ -6781,6 +6781,9 @@ packages:
   tailwind-merge@3.3.0:
     resolution: {integrity: sha512-fyW/pEfcQSiigd5SNn0nApUOxx0zB/dm6UDU/rEwc2c3sX2smWUNbapHv+QRqLGVp9GWX3THIa7MUGPo+YkDzQ==}
 
+  tailwindcss@4.1.11:
+    resolution: {integrity: sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==}
+
   tailwindcss@4.1.7:
     resolution: {integrity: sha512-kr1o/ErIdNhTz8uzAYL7TpaUuzKIE6QPQ4qmSdxnoX/lo+5wmUHQA6h3L5yIqEImSRnAAURDirLu/BgiXGPAhg==}
 
@@ -9010,7 +9013,7 @@ snapshots:
       '@napi-rs/nice-win32-x64-msvc': 1.0.1
     optional: true
 
-  '@nestjs/cli@11.0.7(@swc/cli@0.6.0(@swc/core@1.11.24)(chokidar@4.0.3))(@swc/core@1.11.24)(@types/node@22.15.19)':
+  '@nestjs/cli@11.0.7(@swc/cli@0.7.7(@swc/core@1.11.24)(chokidar@4.0.3))(@swc/core@1.11.24)(@types/node@22.15.19)':
     dependencies:
       '@angular-devkit/core': 19.2.8(chokidar@4.0.3)
       '@angular-devkit/schematics': 19.2.8(chokidar@4.0.3)
@@ -9032,7 +9035,7 @@ snapshots:
       webpack: 5.99.6(@swc/core@1.11.24)
       webpack-node-externals: 3.0.0
     optionalDependencies:
-      '@swc/cli': 0.6.0(@swc/core@1.11.24)(chokidar@4.0.3)
+      '@swc/cli': 0.7.7(@swc/core@1.11.24)(chokidar@4.0.3)
       '@swc/core': 1.11.24
     transitivePeerDependencies:
       - '@types/node'
@@ -9128,7 +9131,7 @@ snapshots:
 
   '@next/env@15.3.2': {}
 
-  '@next/eslint-plugin-next@15.3.2':
+  '@next/eslint-plugin-next@15.3.4':
     dependencies:
       fast-glob: 3.3.1
 
@@ -9908,7 +9911,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@swc/cli@0.6.0(@swc/core@1.11.24)(chokidar@4.0.3)':
+  '@swc/cli@0.7.7(@swc/core@1.11.24)(chokidar@4.0.3)':
     dependencies:
       '@swc/core': 1.11.24
       '@swc/counter': 0.1.3
@@ -14114,6 +14117,8 @@ snapshots:
       - typescript
 
   tailwind-merge@3.3.0: {}
+
+  tailwindcss@4.1.11: {}
 
   tailwindcss@4.1.7: {}
 
