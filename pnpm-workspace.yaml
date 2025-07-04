@@ -80,7 +80,7 @@ catalog:
   supertest: ^7.0.0
   syncpack: ^13.0.4
   tailwind-merge: ^3.3.0
-  tailwindcss: ^4.1.6
+  tailwindcss: ^4.1.11
   ts-jest: ^29.2.5
   ts-loader: ^9.5.2
   ts-node: ^10.9.2
