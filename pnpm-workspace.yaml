@@ -5,7 +5,7 @@ packages:
 publicHoistPattern:
   - "*prettier*"
 catalog:
-  "@changesets/cli": ^2.29.4
+  "@changesets/cli": ^2.29.6
   "@eslint/js": ^9.25.0
   "@hookform/resolvers": ^5.0.1
   "@nestjs/cli": ^11.0.0
